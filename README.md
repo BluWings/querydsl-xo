@@ -1,24 +1,25 @@
 querydsl-xo
 ===========
 
+Annotation Processor for [Querydsl](http://www.querydsl.com) which handles [XO](https://github.com/buschmais/xo) annotations.
 
 Maven Users
 -----------
 
 Our artifacts are published to the Maven Central repository and can be found under the ``com.smb-tec.xo`` groupId.
 
-You'll need to add the following dependency in your builds. It currently uses the eXtended Objects 0.4.0-SNAPSHOT version:
+You'll need to add the following dependency in your builds.
 
-	<dependency>
-	  	<groupId>com.smb-tec.xo</groupId>
-	  	<artifactId>querydsl-xo</artifactId>
-	  	<version>0.0.1-SNAPSHOT</version>
-	</dependency>
+    <dependency>
+        <groupId>com.smb-tec.xo</groupId>
+        <artifactId>querydsl-xo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </dependency>
 
 Getting Started
 ---------------
 
-Please visit the project wiki for the latest information : [https://github.com/BluWings/querydsl-xo/wiki](https://github.com/BluWings/querydsl-xo/wiki)
+Please visit the project wiki for the latest information : [https://github.com/BluWings/query-dsl/wiki](https://github.com/BluWings/querydsl-xo/wiki)
 
 License
 -------
@@ -30,7 +31,7 @@ Build
 
 Start the Maven build on command line
 
-	mvn clean package
+    mvn clean package
 
 Continuous Build
 ----------------

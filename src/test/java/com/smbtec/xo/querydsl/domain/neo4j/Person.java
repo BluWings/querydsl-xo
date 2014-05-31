@@ -1,4 +1,4 @@
-package com.smbtec.xo.querydsl.domain;
+package com.smbtec.xo.querydsl.domain.neo4j;
 
 import com.buschmais.xo.neo4j.api.annotation.Indexed;
 import com.buschmais.xo.neo4j.api.annotation.Label;

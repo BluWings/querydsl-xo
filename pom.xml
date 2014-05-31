@@ -15,22 +15,63 @@
 	<properties>
 		<querydsl.version>3.3.4</querydsl.version>
 		<xo.version>0.4.0-SNAPSHOT</xo.version>
+		<tinkerpop.version>0.0.2-SNAPSHOT</tinkerpop.version>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>sonatype-oss</id>
+			<url>https://oss.sonatype.org/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>neo4j-releases</id>
+			<url>http://m2.neo4j.org/content/repositories/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
+					<compilerArgument>-proc:none</compilerArgument>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<useReleaseProfile>true</useReleaseProfile>
+					<goals>deploy</goals>
+					<arguments>-DskipTests -Dinvoker.skip=true -Psonatype-oss-release</arguments>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>com.mysema.querydsl</groupId>
@@ -42,6 +83,11 @@
 			<artifactId>xo.neo4j</artifactId>
 			<version>${xo.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>com.smb-tec.xo</groupId>
+            <artifactId>xo-tinkerpop-blueprints</artifactId>
+            <version>${tinkerpop.version}</version>
+        </dependency>
 		<!-- test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -59,6 +105,17 @@
 		<name>SMB GmbH</name>
 		<url>http://www.smb-tec.com/en</url>
 	</organization>
+
+    <scm>
+        <connection>scm:git:git@github.com:BluWings/querydsl-xo.git</connection>
+        <url>git@github.com:BluWings/querydsl-xo.git</url>
+        <developerConnection>scm:git:git@github.com:BluWings/querydsl-xo.git</developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/BluWings/querydsl-xo/issues</url>
+    </issueManagement>
 
 	<developers>
 		<developer>

@@ -13,9 +13,9 @@ import com.mysema.query.apt.DefaultConfiguration;
  * @author Lars Martin - lars.martin@smb-tec.com
  *
  */
-public class DefaultXONeo4jAnnotationProcessorConfiguration extends DefaultConfiguration {
+public class DefaultXOAnnotationProcessorConfiguration extends DefaultConfiguration {
 
-    public DefaultXONeo4jAnnotationProcessorConfiguration(RoundEnvironment roundEnv, Map<String, String> options, Set<String> keywords,
+    public DefaultXOAnnotationProcessorConfiguration(RoundEnvironment roundEnv, Map<String, String> options, Set<String> keywords,
             Class<? extends Annotation> entitiesAnn, Class<? extends Annotation> entityAnn, Class<? extends Annotation> superTypeAnn,
             Class<? extends Annotation> embeddableAnn, Class<? extends Annotation> embeddedAnn, Class<? extends Annotation> skipAnn) {
 
