@@ -29,6 +29,12 @@ public class XOAnnotationProcessorTest extends AbstractProcessorTest {
     }
 
     @Test
+    public void processNeo4jAnnotations2() throws IOException {
+        File file = new File(PACKAGE_PATH + NEO4J, "Group.java");
+        process(XONeo4jAnnotationProcessor.class, Collections.singletonList(file.getPath()), NEO4J);
+    }
+
+    @Test
     public void processTinkerPopAnnotations() throws IOException {
         File file = new File(PACKAGE_PATH + TINKERPOP, "Person.java");
         process(XOTinkerPopAnnotationProcessor.class, Collections.singletonList(file.getPath()), TINKERPOP);
