@@ -6,6 +6,7 @@ import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
 import javax.tools.Diagnostic;
 
+import com.buschmais.xo.api.annotation.Transient;
 import com.buschmais.xo.neo4j.api.annotation.Label;
 import com.mysema.query.annotations.QueryEmbeddable;
 import com.mysema.query.annotations.QueryEmbedded;
@@ -29,7 +30,8 @@ public class XONeo4jAnnotationProcessor extends AbstractQuerydslProcessor {
         processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "Running " + getClass().getSimpleName());
 
         DefaultConfiguration configuration = new DefaultXOAnnotationProcessorConfiguration(roundEnv, processingEnv.getOptions(),
-                Collections.<String> emptySet(), QueryEntities.class, Label.class, QuerySupertype.class, QueryEmbeddable.class, QueryEmbedded.class, QueryTransient.class);
+                Collections.<String> emptySet(), QueryEntities.class, Label.class, QuerySupertype.class, QueryEmbeddable.class, QueryEmbedded.class,
+                Transient.class);
         return configuration;
     }
 

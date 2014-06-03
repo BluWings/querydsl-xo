@@ -6,11 +6,11 @@ import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
 import javax.tools.Diagnostic;
 
+import com.buschmais.xo.api.annotation.Transient;
 import com.mysema.query.annotations.QueryEmbeddable;
 import com.mysema.query.annotations.QueryEmbedded;
 import com.mysema.query.annotations.QueryEntities;
 import com.mysema.query.annotations.QuerySupertype;
-import com.mysema.query.annotations.QueryTransient;
 import com.mysema.query.apt.AbstractQuerydslProcessor;
 import com.mysema.query.apt.Configuration;
 import com.mysema.query.apt.DefaultConfiguration;
@@ -30,7 +30,7 @@ public class XOTinkerPopAnnotationProcessor extends AbstractQuerydslProcessor {
 
         DefaultConfiguration configuration = new DefaultXOAnnotationProcessorConfiguration(roundEnv, processingEnv.getOptions(),
                 Collections.<String> emptySet(), QueryEntities.class, Vertex.class, QuerySupertype.class, QueryEmbeddable.class, QueryEmbedded.class,
-                QueryTransient.class);
+                Transient.class);
         return configuration;
     }
 

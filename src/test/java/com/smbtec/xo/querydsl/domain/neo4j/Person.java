@@ -1,5 +1,6 @@
 package com.smbtec.xo.querydsl.domain.neo4j;
 
+import com.buschmais.xo.api.annotation.Transient;
 import com.buschmais.xo.neo4j.api.annotation.Indexed;
 import com.buschmais.xo.neo4j.api.annotation.Label;
 
@@ -7,7 +8,17 @@ import com.buschmais.xo.neo4j.api.annotation.Label;
 public interface Person {
 
     @Indexed
-    String getName();
+    String getLastName();
 
-    void setName(String name);
+    void setLastName(String name);
+
+    String getFirstName();
+
+    void setFirstName();
+
+    @Transient
+    String getFullname();
+
+    void setFullname();
+
 }

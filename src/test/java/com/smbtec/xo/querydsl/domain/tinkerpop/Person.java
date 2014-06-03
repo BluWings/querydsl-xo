@@ -1,5 +1,6 @@
 package com.smbtec.xo.querydsl.domain.tinkerpop;
 
+import com.buschmais.xo.api.annotation.Transient;
 import com.smbtec.xo.tinkerpop.blueprints.api.annotation.Indexed;
 import com.smbtec.xo.tinkerpop.blueprints.api.annotation.Vertex;
 
@@ -7,7 +8,16 @@ import com.smbtec.xo.tinkerpop.blueprints.api.annotation.Vertex;
 public interface Person {
 
     @Indexed
-    String getName();
+    String getLastName();
 
-    void setName(String name);
+    void setLastName(String name);
+
+    String getFirstName();
+
+    void setFirstName();
+
+    @Transient
+    String getFullname();
+
+    void setFullname();
 }
