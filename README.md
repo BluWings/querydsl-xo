@@ -36,4 +36,4 @@ Start the Maven build on command line
 Continuous Build
 ----------------
 
-[![Build Status](https://secure.travis-ci.org/BluWings/querydsl-xo.png)](http://travis-ci.org/BluWings/querydsl-xo)
+[![Build Status](https://secure.travis-ci.org/SMB-TEC/querydsl-xo.png)](http://travis-ci.org/SMB-TEC/querydsl-xo)
